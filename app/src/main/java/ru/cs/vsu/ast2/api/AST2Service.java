@@ -12,6 +12,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.cs.vsu.ast2.api.account.AccountApi;
 import ru.cs.vsu.ast2.api.auth.AuthApi;
+import ru.cs.vsu.ast2.api.car.CarApi;
+import ru.cs.vsu.ast2.api.car.brand.CarBrandApi;
+import ru.cs.vsu.ast2.api.car.type.CarTypeApi;
 import ru.cs.vsu.ast2.api.news.NewsApi;
 
 import java.io.IOException;
@@ -23,6 +26,9 @@ public class AST2Service {
 
     private final AuthApi authApi;
     private final AccountApi accountApi;
+    private final CarTypeApi carTypeApi;
+    private final CarBrandApi carBrandApi;
+    private final CarApi carApi;
     private final NewsApi newsApi;
 
     public AST2Service() {
@@ -30,6 +36,9 @@ public class AST2Service {
         authApi = retrofit.create(AuthApi.class);
         newsApi = retrofit.create(NewsApi.class);
         accountApi = retrofit.create(AccountApi.class);
+        carTypeApi = retrofit.create(CarTypeApi.class);
+        carBrandApi = retrofit.create(CarBrandApi.class);
+        carApi = retrofit.create(CarApi.class);
     }
 
     private OkHttpClient createOkHttpClient() {

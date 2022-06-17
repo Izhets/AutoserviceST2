@@ -27,9 +27,9 @@
             tools:layout="@layout/fragment_news"/>
     <fragment
             android:id="@+id/logged_nav_my_car"
-            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:name="ru.cs.vsu.ast2.ui.car.MyCarsFragment"
             android:label="@string/auth_menu_my_car"
-            tools:layout="@layout/fragment_news"/>
+            tools:layout="@layout/fragment_my_cars"/>
     <fragment
             android:id="@+id/nav_about_app"
             android:name="ru.cs.vsu.ast2.ui.about.AboutFragment"

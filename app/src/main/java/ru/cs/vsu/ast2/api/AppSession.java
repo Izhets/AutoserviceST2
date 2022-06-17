@@ -7,6 +7,13 @@ import lombok.Setter;
 import ru.cs.vsu.ast2.App;
 import ru.cs.vsu.ast2.api.account.AccountRequests;
 import ru.cs.vsu.ast2.api.account.dto.Account;
+import ru.cs.vsu.ast2.api.car.CarRequest;
+import ru.cs.vsu.ast2.api.car.brand.CarBrandRequest;
+import ru.cs.vsu.ast2.api.car.brand.dto.CarBrand;
+import ru.cs.vsu.ast2.api.car.brand.dto.CarModel;
+import ru.cs.vsu.ast2.api.car.dto.Car;
+import ru.cs.vsu.ast2.api.car.type.CarTypeRequest;
+import ru.cs.vsu.ast2.api.car.type.dto.CarType;
 import ru.cs.vsu.ast2.api.news.NewsRequests;
 import ru.cs.vsu.ast2.api.news.dto.News;
 import ru.cs.vsu.ast2.ui.logged.LoggedMainActivity;
@@ -24,8 +31,14 @@ public class AppSession {
     private static final String USER_ID = "UserId";
     private static volatile AppSession appSession;
 
-    private List<News> news;
+    private Map<UUID, Car> carIdMap;
     private Map<UUID, News> newsIdMap;
+
+    private List<News> news;
+    private List<Car> userCars;
+    private List<CarType> carTypes;
+    private List<CarModel> carModels;
+    private List<CarBrand> carBrands;
 
     private Account userProfile;
     private Context context;
@@ -69,8 +82,20 @@ public class AppSession {
     }
 
     public void collectAuthData(Context context) {
+        CarRequest carRequest = new CarRequest();
+        carRequest.getUserCars(AppSession.getToken(context.getApplicationContext()), () -> null, () -> null);
+
+        CarTypeRequest carTypeRequest = new CarTypeRequest();
+        carTypeRequest.getCarTypes(() -> null, () -> null);
+
+        CarBrandRequest carBrandRequest = new CarBrandRequest();
+        carBrandRequest.getCarBrands(AppSession.getToken(context.getApplicationContext()), () -> null, () -> null);
+
+        CarBrandRequest carModelRequest = new CarBrandRequest();
+        carModelRequest.getCarModel(AppSession.getToken(context.getApplicationContext()), () -> null, () -> null);
+
         AccountRequests accountRequests = new AccountRequests();
-        accountRequests.getAccountInfo(getToken(context), () -> null, () -> null);
+        accountRequests.getAccountInfo(getToken(context.getApplicationContext()), () -> null, () -> null);
     }
 
     public void collectNews() {
