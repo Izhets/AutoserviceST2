@@ -3,6 +3,7 @@ package ru.cs.vsu.ast2;
 import android.app.Application;
 import android.os.StrictMode;
 import ru.cs.vsu.ast2.api.AST2Service;
+import ru.cs.vsu.ast2.api.AppSession;
 
 public class App extends Application {
 
@@ -17,10 +18,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        if (android.os.Build.VERSION.SDK_INT > 9) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
+        AppSession.clearUserData(getApplicationContext());
 
     }
 

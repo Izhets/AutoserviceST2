@@ -53,7 +53,7 @@ public class LoginFragment extends Fragment {
                                 startActivity(intent);
                             }
                         }, 3000);
-                        //AppSession.getInstance().collectAuthData();
+                        AppSession.getInstance().collectAuthData(getContext());
                         return null;
                     }
                 }, new Callable<Void>() {

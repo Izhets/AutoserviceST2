@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import ru.cs.vsu.ast2.api.account.AccountApi;
 import ru.cs.vsu.ast2.api.auth.AuthApi;
 import ru.cs.vsu.ast2.api.news.NewsApi;
 
@@ -21,12 +22,14 @@ public class AST2Service {
     private static final String API_URL = "https://autoservice-st2-app.herokuapp.com/";
 
     private final AuthApi authApi;
+    private final AccountApi accountApi;
     private final NewsApi newsApi;
 
     public AST2Service() {
         Retrofit retrofit = createRetrofit();
         authApi = retrofit.create(AuthApi.class);
         newsApi = retrofit.create(NewsApi.class);
+        accountApi = retrofit.create(AccountApi.class);
     }
 
     private OkHttpClient createOkHttpClient() {

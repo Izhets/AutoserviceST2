@@ -4,8 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import lombok.Getter;
 import lombok.Setter;
+import ru.cs.vsu.ast2.App;
+import ru.cs.vsu.ast2.api.account.AccountRequests;
+import ru.cs.vsu.ast2.api.account.dto.Account;
 import ru.cs.vsu.ast2.api.news.NewsRequests;
 import ru.cs.vsu.ast2.api.news.dto.News;
+import ru.cs.vsu.ast2.ui.logged.LoggedMainActivity;
 
 import java.util.List;
 import java.util.Map;
@@ -22,6 +26,9 @@ public class AppSession {
 
     private List<News> news;
     private Map<UUID, News> newsIdMap;
+
+    private Account userProfile;
+    private Context context;
 
     public static AppSession getInstance() {
         if (appSession == null)
@@ -59,6 +66,11 @@ public class AppSession {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.apply();
+    }
+
+    public void collectAuthData(Context context) {
+        AccountRequests accountRequests = new AccountRequests();
+        accountRequests.getAccountInfo(getToken(context), () -> null, () -> null);
     }
 
     public void collectNews() {

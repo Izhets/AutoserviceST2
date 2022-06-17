@@ -7,6 +7,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import ru.cs.vsu.ast2.App;
+import ru.cs.vsu.ast2.api.AppSession;
 import ru.cs.vsu.ast2.api.auth.login.dto.LoginRequest;
 import ru.cs.vsu.ast2.api.auth.login.dto.LoginResponse;
 import ru.cs.vsu.ast2.api.auth.register.dto.RegisterRequest;
@@ -28,9 +29,8 @@ public final class AuthRequests {
                 if (response.isSuccessful()) {
                     Log.d("REQUEST", "LOGIN REQUEST SUCCESSFUL\nLogin user token: " + response.body().getToken());
                     Toast.makeText(context, "Вход выполнен", Toast.LENGTH_SHORT).show();
-                    //AppSession.saveUserData(response.body().getToken(), context);
+                    AppSession.saveUserData(response.body().getToken(), context);
                     //System.out.println(AppSession.getToken(context));
-
                     try {
                         onSucces.call();
                     } catch (Exception e) {

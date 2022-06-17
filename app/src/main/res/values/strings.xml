@@ -1,6 +1,7 @@
 <resources>
     <!--                 Application                 -->
     <string name="app_name">Autoservice ST2</string>
+    <string name="app_description">Для вашего удобства!</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -18,6 +19,7 @@
     <string name="auth_menu_lk">Личный кабинет</string>
     <string name="auth_menu_history_ticket">История заявок</string>
     <string name="auth_menu_my_car">Мои автомобили</string>
+    <string name="auth_menu_logout">Выйти</string>
 
     <!--                 Registration                 -->
     <string name="registration">Регистрация</string>
@@ -29,5 +31,7 @@
     <string name="about">Приложение разработано в рамках курса \"Мобильная разработка. IT Академия
         Samsung\", в качестве индивидуального (выпускного) проекта.
     </string>
+
+    <string name="replenishBalanceSpinner">Выберите способ оплаты:</string>
 
 </resources>

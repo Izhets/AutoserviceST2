@@ -3,7 +3,7 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/authenticated_mobile_navigation"
-            app:startDestination="@+id/logged_nav_map">
+            app:startDestination="@+id/logged_news">
 
     <fragment
             android:id="@+id/logged_news"
@@ -17,9 +17,9 @@
             tools:layout="@layout/fragment_news"/>
     <fragment
             android:id="@+id/logged_nav_lk"
-            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:name="ru.cs.vsu.ast2.ui.lk.LkFragment"
             android:label="@string/auth_menu_lk"
-            tools:layout="@layout/fragment_news"/>
+            tools:layout="@layout/fragment_lk"/>
     <fragment
             android:id="@+id/logged_nav_history_ticket"
             android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
@@ -34,6 +34,11 @@
             android:id="@+id/nav_about_app"
             android:name="ru.cs.vsu.ast2.ui.about.AboutFragment"
             android:label="@string/menu_about"
+            tools:layout="@layout/fragment_about"/>
+    <fragment
+            android:id="@+id/nav_logout"
+            android:name="ru.cs.vsu.ast2.ui.about.AboutFragment"
+            android:label="@string/auth_menu_logout"
             tools:layout="@layout/fragment_about"/>
 
 </navigation>

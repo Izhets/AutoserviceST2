@@ -17,7 +17,7 @@
             android:label="@string/menu_login_registration"
             tools:layout="@layout/fragment_login"/>
 
-    <activity
+    <fragment
             android:id="@+id/nav_about"
             android:name="ru.cs.vsu.ast2.ui.about.AboutFragment"
             android:label="@string/menu_about"
