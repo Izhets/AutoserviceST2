@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/logged_nav_map"
+                android:title="@string/auth_menu_map"
+                android:icon="@drawable/image_11"/>
+        <item
+                android:id="@+id/logged_nav_searching_park"
+                android:title="@string/auth_menu_find_park"
+                android:icon="@drawable/ico_search"/>
+        <item
+                android:id="@+id/logged_nav_lk"
+                android:title="@string/auth_menu_lk"
+                android:icon="@drawable/ico_profile"/>
+        <item
+                android:id="@+id/logged_nav_now_park"
+                android:title="@string/auth_menu_now_park"
+                android:icon="@drawable/ico_cur_parking"/>
+        <item
+                android:id="@+id/logged_nav_history_park"
+                android:title="@string/auth_menu_history_park"
+                android:icon="@drawable/ico_his_parking"/>
+        <item
+                android:id="@+id/logged_nav_my_cars"
+                android:title="@string/auth_menu_my_auto"
+                android:icon="@drawable/ico_car"/>
+        <item
+                android:id="@+id/nav_about_app"
+                android:title="@string/menu_about_app"
+                android:icon="@drawable/ico_about"/>
+
+    </group>
+</menu>

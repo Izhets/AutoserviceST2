@@ -14,6 +14,7 @@ import ru.cs.vsu.ast2.R;
 import ru.cs.vsu.ast2.api.AppSession;
 import ru.cs.vsu.ast2.api.auth.AuthRequests;
 import ru.cs.vsu.ast2.databinding.FragmentLoginBinding;
+import ru.cs.vsu.ast2.ui.logged.LoggedMainActivity;
 import ru.cs.vsu.ast2.ui.registration.RegistrationActivity;
 
 import java.util.Timer;
@@ -48,8 +49,8 @@ public class LoginFragment extends Fragment {
                         new Timer().schedule(new TimerTask() {
                             @Override
                             public void run() {
-                                //Intent intent = new Intent(getContext(), LoggedMainActivity.class);
-                                //startActivity(intent);
+                                Intent intent = new Intent(getContext(), LoggedMainActivity.class);
+                                startActivity(intent);
                             }
                         }, 3000);
                         //AppSession.getInstance().collectAuthData();

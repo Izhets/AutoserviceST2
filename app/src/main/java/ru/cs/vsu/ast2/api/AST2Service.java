@@ -18,7 +18,7 @@ import java.io.IOException;
 @Getter
 public class AST2Service {
 
-    private static final String API_URL = "http://192.168.0.12:8080";
+    private static final String API_URL = "https://autoservice-st2-app.herokuapp.com/";
 
     private final AuthApi authApi;
     private final NewsApi newsApi;
