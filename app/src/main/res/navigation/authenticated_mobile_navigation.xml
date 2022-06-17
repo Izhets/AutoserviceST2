@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/authenticated_mobile_navigation"
+            app:startDestination="@+id/logged_nav_map">
+
+    <fragment
+            android:id="@+id/logged_news"
+            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:label="@string/menu_news"
+            tools:layout="@layout/fragment_news"/>
+    <fragment
+            android:id="@+id/logged_ticket"
+            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:label="@string/auth_menu_ticket"
+            tools:layout="@layout/fragment_news"/>
+    <fragment
+            android:id="@+id/logged_nav_lk"
+            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:label="@string/auth_menu_lk"
+            tools:layout="@layout/fragment_news"/>
+    <fragment
+            android:id="@+id/logged_nav_history_ticket"
+            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:label="@string/auth_menu_history_ticket"
+            tools:layout="@layout/fragment_news"/>
+    <fragment
+            android:id="@+id/logged_nav_my_car"
+            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:label="@string/auth_menu_my_car"
+            tools:layout="@layout/fragment_news"/>
+    <fragment
+            android:id="@+id/nav_about_app"
+            android:name="ru.cs.vsu.ast2.ui.about.AboutFragment"
+            android:label="@string/menu_about"
+            tools:layout="@layout/fragment_about"/>
+
+</navigation>

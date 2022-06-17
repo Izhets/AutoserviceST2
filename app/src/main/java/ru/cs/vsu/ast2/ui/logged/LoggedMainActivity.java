@@ -38,10 +38,9 @@ public class LoggedMainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.logged_nav_map, R.id.logged_nav_searching_park,
-                R.id.logged_nav_lk, R.id.logged_nav_now_park,
-                R.id.logged_nav_history_park, R.id.logged_nav_my_cars,
-                R.id.nav_about_app)
+                R.id.logged_news, R.id.logged_ticket,
+                R.id.logged_nav_lk, R.id.logged_nav_history_ticket,
+                R.id.logged_nav_my_car, R.id.nav_about_app)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_logged_content_main);

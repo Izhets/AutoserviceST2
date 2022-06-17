@@ -5,33 +5,29 @@
 
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/logged_nav_map"
-                android:title="@string/auth_menu_map"
-                android:icon="@drawable/image_11"/>
+                android:id="@+id/logged_news"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/menu_news"/>
         <item
-                android:id="@+id/logged_nav_searching_park"
-                android:title="@string/auth_menu_find_park"
-                android:icon="@drawable/ico_search"/>
+                android:id="@+id/logged_ticket"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/auth_menu_ticket"/>
         <item
                 android:id="@+id/logged_nav_lk"
-                android:title="@string/auth_menu_lk"
-                android:icon="@drawable/ico_profile"/>
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/auth_menu_lk"/>
         <item
-                android:id="@+id/logged_nav_now_park"
-                android:title="@string/auth_menu_now_park"
-                android:icon="@drawable/ico_cur_parking"/>
+                android:id="@+id/logged_nav_history_ticket"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/auth_menu_history_ticket"/>
         <item
-                android:id="@+id/logged_nav_history_park"
-                android:title="@string/auth_menu_history_park"
-                android:icon="@drawable/ico_his_parking"/>
-        <item
-                android:id="@+id/logged_nav_my_cars"
-                android:title="@string/auth_menu_my_auto"
-                android:icon="@drawable/ico_car"/>
+                android:id="@+id/logged_nav_my_car"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/auth_menu_my_car"/>
         <item
                 android:id="@+id/nav_about_app"
-                android:title="@string/menu_about_app"
-                android:icon="@drawable/ico_about"/>
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/menu_about"/>
 
     </group>
 </menu>

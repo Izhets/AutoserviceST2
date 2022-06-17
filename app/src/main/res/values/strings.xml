@@ -13,9 +13,21 @@
     <string name="menu_login_registration">Вход или регистрация</string>
     <string name="menu_about">О приложении</string>
 
+    <!--                Auth navigation menu                 -->
+    <string name="auth_menu_ticket">Мои заявки</string>
+    <string name="auth_menu_lk">Личный кабинет</string>
+    <string name="auth_menu_history_ticket">История заявок</string>
+    <string name="auth_menu_my_car">Мои автомобили</string>
+
     <!--                 Registration                 -->
     <string name="registration">Регистрация</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--                    About                 -->
+    <string name="about_title">О приложении</string>
+    <string name="about">Приложение разработано в рамках курса \"Мобильная разработка. IT Академия
+        Samsung\", в качестве индивидуального (выпускного) проекта.
+    </string>
 
 </resources>

@@ -23,6 +23,10 @@
             </intent-filter>
         </activity>
         <activity
+                android:name=".ui.logged.LoggedMainActivity"
+                android:exported="true"
+                android:theme="@style/Theme.AutoserviceST2.NoActionBar"/>
+        <activity
                 android:name=".ui.registration.RegistrationActivity"
                 android:exported="true"
                 android:theme="@style/Theme.AutoserviceST2.NoActionBar"/>
