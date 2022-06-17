@@ -11,19 +11,22 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.cs.vsu.ast2.api.auth.AuthApi;
+import ru.cs.vsu.ast2.api.news.NewsApi;
 
 import java.io.IOException;
 
 @Getter
 public class AST2Service {
 
-    private static final String API_URL = "http://localhost:8080";
+    private static final String API_URL = "http://192.168.0.12:8080";
 
     private final AuthApi authApi;
+    private final NewsApi newsApi;
 
     public AST2Service() {
         Retrofit retrofit = createRetrofit();
         authApi = retrofit.create(AuthApi.class);
+        newsApi = retrofit.create(NewsApi.class);
     }
 
     private OkHttpClient createOkHttpClient() {

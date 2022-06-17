@@ -3,23 +3,23 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/mobile_navigation"
-            app:startDestination="@+id/nav_home">
+            app:startDestination="@+id/nav_login_registration">
 
     <fragment
-            android:id="@+id/nav_home"
-            android:name="ru.cs.vsu.ast2.ui.home.HomeFragment"
-            android:label="@string/menu_home"
-            tools:layout="@layout/fragment_home"/>
+            android:id="@+id/nav_news"
+            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:label="@string/menu_news"
+            tools:layout="@layout/fragment_news"/>
 
     <fragment
-            android:id="@+id/nav_gallery"
-            android:name="ru.cs.vsu.ast2.ui.gallery.GalleryFragment"
-            android:label="@string/menu_gallery"
-            tools:layout="@layout/fragment_gallery"/>
+            android:id="@+id/nav_login_registration"
+            android:name="ru.cs.vsu.ast2.ui.login.LoginFragment"
+            android:label="@string/menu_login_registration"
+            tools:layout="@layout/fragment_login"/>
 
     <fragment
-            android:id="@+id/nav_slideshow"
-            android:name="ru.cs.vsu.ast2.ui.slideshow.SlideshowFragment"
-            android:label="@string/menu_slideshow"
-            tools:layout="@layout/fragment_slideshow"/>
+            android:id="@+id/nav_about"
+            android:name="ru.cs.vsu.ast2.ui.login.LoginFragment"
+            android:label="@string/menu_about"
+            tools:layout="@layout/fragment_login"/>
 </navigation>
