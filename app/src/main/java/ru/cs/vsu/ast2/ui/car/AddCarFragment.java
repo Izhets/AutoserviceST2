@@ -38,7 +38,7 @@ public class AddCarFragment extends Fragment {
     private FragmentAddCarBinding binding;
 
     private Map<String, UUID> brandMap;
-    private Map<String, UUID> modelMap;
+    //private Map<String, UUID> modelMap;
     private Map<String, UUID> typeMap;
     private Map<String, List<String>> brandModelMap;
 
@@ -61,9 +61,9 @@ public class AddCarFragment extends Fragment {
                 .stream()
                 .collect(Collectors.toMap(CarBrand::getName, CarBrand::getId));
 
-        modelMap = AppSession.getInstance().getCarModels()
-                .stream()
-                .collect(Collectors.toMap(CarModel::getName, CarModel::getId));
+//        modelMap = AppSession.getInstance().getCarModels()
+//                .stream()
+//                .collect(Collectors.toMap(CarModel::getName, CarModel::getId));
 
         typeMap = AppSession.getInstance().getCarTypes()
                 .stream()
@@ -160,8 +160,14 @@ public class AddCarFragment extends Fragment {
             CarBrand carBrand = new CarBrand();
             carBrand.setId(brandMap.get(brandSpinnerEditCar.getSelectedItem().toString()));
 
+//            CarModel carModel = new CarModel();
+//            carModel.setId(modelMap.get(modelSpinnerEditCar.getSelectedItem().toString()));
+
             CarModel carModel = new CarModel();
-            carModel.setId(modelMap.get(modelSpinnerEditCar.getSelectedItem().toString()));
+            for (int i = 0; i < AppSession.getInstance().getCarModels().size(); i++) {
+                carModel.setId(AppSession.getInstance().getCarModels().get(i).getId());
+            }
+
 
             CarType carType = new CarType();
             carType.setId(typeMap.get(getTypeName(typeSpinnerEditCar.getSelectedItem().toString())));
