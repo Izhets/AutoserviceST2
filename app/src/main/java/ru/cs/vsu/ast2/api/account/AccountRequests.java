@@ -102,4 +102,41 @@ public class AccountRequests {
         });
     }
 
+    public void withdrawMoney(String token, Integer value, Callable<Void> onSuccess, Callable<Void> onFailure) {
+        Call<Account> call = accountApi.withdrawMoney(AuthUtil.toBearerToken(token), value);
+        call.enqueue(new Callback<Account>() {
+            @Override
+            public void onResponse(Call<Account> call, Response<Account> response) {
+                if (response.isSuccessful()) {
+                    Log.d("REQUEST", "Get account was successful");
+                    setAccountInfo(response.body());
+                    AppSession.getInstance().setUserProfile(response.body());
+                    try {
+                        onSuccess.call();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return;
+                }
+                Log.e("REQUEST", "Get account failure with code = " + response.code());
+                try {
+                    onFailure.call();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Account> call, Throwable t) {
+                Log.e("REQUEST", "Get account failure");
+                t.printStackTrace();
+                try {
+                    onFailure.call();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
 }

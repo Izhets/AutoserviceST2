@@ -3,28 +3,22 @@ package ru.cs.vsu.ast2.ui.news;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
-import android.os.ParcelFileDescriptor;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import ru.cs.vsu.ast2.R;
 import ru.cs.vsu.ast2.api.news.dto.News;
 import ru.cs.vsu.ast2.util.ImageManager;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.List;
-
-import static android.os.FileUtils.copy;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
@@ -73,6 +67,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
+        if (news == null) {
+            Toast.makeText(context, "Новостей нет или возникли проблемы с интернет соединением", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
         return news.size();
     }
 
@@ -80,7 +78,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         final TextView newsTitle;
         final TextView newsContent;
         final ImageView newsImage;
-
 
         public ViewHolder(View itemView) {
             super(itemView);

@@ -17,11 +17,14 @@ import ru.cs.vsu.ast2.R;
 public class ImageManager {
     private final static String TAG = "ImageManager";
 
-    /** Private constructor prevents instantiation from other classes */
-    private ImageManager () {}
+    /**
+     * Private constructor prevents instantiation from other classes
+     */
+    private ImageManager() {
+    }
 
     public static void fetchImage(final String iUrl, final ImageView iView) {
-        if ( iUrl == null || iView == null )
+        if (iUrl == null || iView == null)
             return;
 
         final Handler handler = new Handler() {
@@ -36,14 +39,14 @@ public class ImageManager {
             @Override
             public void run() {
                 final Bitmap image = downloadImage(iUrl);
-                if ( image != null ) {
+                if (image != null) {
                     Log.v(TAG, "Got image by URL: " + iUrl);
                     final Message message = handler.obtainMessage(1, image);
                     handler.sendMessage(message);
                 }
             }
         };
-        iView.setImageResource(R.drawable.ic_front);
+        iView.setImageResource(R.drawable.ico_loading_one);
         thread.setPriority(3);
         thread.start();
     }
@@ -72,9 +75,12 @@ public class ImageManager {
             Log.w(TAG, "Out of memory!!!");
             return null;
         } finally {
-            if ( buf_stream != null )
-                try { buf_stream.close(); } catch (IOException ex) {}
-            if ( conn != null )
+            if (buf_stream != null)
+                try {
+                    buf_stream.close();
+                } catch (IOException ex) {
+                }
+            if (conn != null)
                 conn.disconnect();
         }
         return bitmap;

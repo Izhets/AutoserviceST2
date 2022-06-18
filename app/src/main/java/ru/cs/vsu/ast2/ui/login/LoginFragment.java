@@ -17,6 +17,7 @@ import ru.cs.vsu.ast2.databinding.FragmentLoginBinding;
 import ru.cs.vsu.ast2.ui.logged.LoggedMainActivity;
 import ru.cs.vsu.ast2.ui.registration.RegistrationActivity;
 
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.Callable;
@@ -29,7 +30,6 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
-
 
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -53,7 +53,7 @@ public class LoginFragment extends Fragment {
                                 startActivity(intent);
                             }
                         }, 3000);
-                        AppSession.getInstance().collectAuthData(getContext());
+                        AppSession.getInstance().collectAuthData(Objects.requireNonNull(getContext()));
                         return null;
                     }
                 }, new Callable<Void>() {

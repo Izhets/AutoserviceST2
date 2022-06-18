@@ -12,9 +12,9 @@
             tools:layout="@layout/fragment_news"/>
     <fragment
             android:id="@+id/logged_ticket"
-            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:name="ru.cs.vsu.ast2.ui.application.MyApplicationsFragment"
             android:label="@string/auth_menu_ticket"
-            tools:layout="@layout/fragment_news"/>
+            tools:layout="@layout/fragment_my_applications"/>
     <fragment
             android:id="@+id/logged_nav_lk"
             android:name="ru.cs.vsu.ast2.ui.lk.LkFragment"
@@ -22,9 +22,9 @@
             tools:layout="@layout/fragment_lk"/>
     <fragment
             android:id="@+id/logged_nav_history_ticket"
-            android:name="ru.cs.vsu.ast2.ui.news.NewsFragment"
+            android:name="ru.cs.vsu.ast2.ui.application.history.ApplicationHistoryFragment"
             android:label="@string/auth_menu_history_ticket"
-            tools:layout="@layout/fragment_news"/>
+            tools:layout="@layout/fragment_application_history"/>
     <fragment
             android:id="@+id/logged_nav_my_car"
             android:name="ru.cs.vsu.ast2.ui.car.MyCarsFragment"

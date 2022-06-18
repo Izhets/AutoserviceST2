@@ -1,10 +1,8 @@
 package ru.cs.vsu.ast2.ui.car;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +10,6 @@ import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.RecyclerView;
 import ru.cs.vsu.ast2.R;
 import ru.cs.vsu.ast2.api.AppSession;
 import ru.cs.vsu.ast2.api.car.CarRequest;
@@ -21,7 +18,6 @@ import ru.cs.vsu.ast2.api.car.brand.dto.CarModel;
 import ru.cs.vsu.ast2.api.car.dto.Car;
 import ru.cs.vsu.ast2.api.car.type.dto.CarType;
 import ru.cs.vsu.ast2.databinding.FragmentAddCarBinding;
-import ru.cs.vsu.ast2.ui.news.NewsAdapter;
 import ru.cs.vsu.ast2.util.AlertUtil;
 import ru.cs.vsu.ast2.util.Args;
 import ru.cs.vsu.ast2.util.StringUtil;
@@ -38,10 +34,9 @@ public class AddCarFragment extends Fragment {
     private FragmentAddCarBinding binding;
 
     private Map<String, UUID> brandMap;
-    //private Map<String, UUID> modelMap;
+    private Map<String, UUID> modelMap = new HashMap();
     private Map<String, UUID> typeMap;
     private Map<String, List<String>> brandModelMap;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -61,9 +56,10 @@ public class AddCarFragment extends Fragment {
                 .stream()
                 .collect(Collectors.toMap(CarBrand::getName, CarBrand::getId));
 
-//        modelMap = AppSession.getInstance().getCarModels()
-//                .stream()
-//                .collect(Collectors.toMap(CarModel::getName, CarModel::getId));
+        List<CarModel> modelList = AppSession.getInstance().getCarModels();
+        for (CarModel cm : modelList) {
+            modelMap.put(cm.getName(), cm.getId());
+        }
 
         typeMap = AppSession.getInstance().getCarTypes()
                 .stream()
@@ -160,14 +156,8 @@ public class AddCarFragment extends Fragment {
             CarBrand carBrand = new CarBrand();
             carBrand.setId(brandMap.get(brandSpinnerEditCar.getSelectedItem().toString()));
 
-//            CarModel carModel = new CarModel();
-//            carModel.setId(modelMap.get(modelSpinnerEditCar.getSelectedItem().toString()));
-
             CarModel carModel = new CarModel();
-            for (int i = 0; i < AppSession.getInstance().getCarModels().size(); i++) {
-                carModel.setId(AppSession.getInstance().getCarModels().get(i).getId());
-            }
-
+            carModel.setId(modelMap.get(modelSpinnerEditCar.getSelectedItem().toString()));
 
             CarType carType = new CarType();
             carType.setId(typeMap.get(getTypeName(typeSpinnerEditCar.getSelectedItem().toString())));

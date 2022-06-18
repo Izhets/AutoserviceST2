@@ -7,7 +7,7 @@
         android:layout_height="wrap_content">
 
     <TextView
-            android:id="@+id/nameCarItem"
+            android:id="@+id/nameHistoryApplicationItem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Название"
@@ -16,25 +16,25 @@
             android:textSize="24sp"
             android:textIsSelectable="false"
             android:textStyle="bold" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp" android:textAlignment="center"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" android:textAlignment="center"/>
     <TextView
-            android:id="@+id/typeCarItem"
+            android:id="@+id/descriptionAddHistoryApplication"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Тип авто"
+            android:text="Описание"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameCarItem"
+            app:layout_constraintTop_toBottomOf="@+id/nameHistoryApplicationItem"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
             android:textSize="16sp"/>
     <TextView
-            android:text="Марка"
+            android:text="Категория запчасти"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/brandCarItem"
-            app:layout_constraintTop_toBottomOf="@+id/typeCarItem"
+            android:id="@+id/partCategoryHistoryApplication"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionAddHistoryApplication"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -42,50 +42,42 @@
             android:layout_marginStart="16dp"
             android:textSize="16sp"/>
     <TextView
-            android:text="Модель"
+            android:text="Запчасть"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/modelCarItem"
+            android:id="@+id/partHistoryApplication"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/brandCarItem"
+            app:layout_constraintTop_toBottomOf="@+id/partCategoryHistoryApplication"
             android:textSize="16sp"/>
     <TextView
-            android:text="Номер авто"
+            android:text="Статус"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/numberCarItem"
-            app:layout_constraintTop_toBottomOf="@+id/modelCarItem"
+            android:id="@+id/statusHistoryApplication"
+            app:layout_constraintTop_toBottomOf="@+id/partHistoryApplication"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             android:layout_marginStart="16dp"
             android:textSize="16sp"
             android:layout_marginTop="8dp"/>
-    <Button
-            android:text="Редактировать"
+    <TextView
+            android:text="Счёт"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editCarItemButton"
-            app:layout_constraintTop_toBottomOf="@+id/numberCarItem"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"/>
-    <Button
-            android:text="Удалить"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/deleteCarItemButton"
+            android:id="@+id/priceHistoryApplication"
+            app:layout_constraintTop_toBottomOf="@+id/statusHistoryApplication"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/editCarItemButton"
-            app:layout_constraintTop_toBottomOf="@+id/numberCarItem"
-            android:layout_marginTop="24dp"
-            app:layout_constraintHorizontal_bias="0.063"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="16dp"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

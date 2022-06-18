@@ -17,4 +17,7 @@ public interface AccountApi {
     @POST("/account/replenish-balance")
     Call<Void> replenishBalanceAccount(@Header("Authorization") String token, @Body ReplenishBalance replenishBalance);
 
+    @POST("/account/withdrawMoney/{price}")
+    Call<Account> withdrawMoney(@Header("Authorization") String token, @Path("price") Integer price);
+
 }

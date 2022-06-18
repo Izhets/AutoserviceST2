@@ -16,17 +16,23 @@
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/activity_main.xml" value="0.3451086956521739" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/activity_registration.xml" value="0.3283514492753623" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/app_bar_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/application_history_item_view.xml" value="0.3088768115942029" />
+        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/application_item_view.xml" value="0.33" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/auth_app_bar_main.xml" value="0.39666357738646896" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/car_info.xml" value="0.225" />
-        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/car_item_view.xml" value="0.225" />
+        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/car_item_view.xml" value="0.33" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/content_main.xml" value="0.3283514492753623" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_about.xml" value="0.3451086956521739" />
-        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_add_car.xml" value="0.225" />
+        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_add_application.xml" value="0.33" />
+        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_add_car.xml" value="0.1" />
+        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_application_history.xml" value="0.3442028985507246" />
+        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_auth_payment.xml" value="0.3451086956521739" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_gallery.xml" value="0.3283514492753623" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_home.xml" value="0.3283514492753623" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_lk.xml" value="0.3451086956521739" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_login.xml" value="0.36277173913043476" />
-        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_my_cars.xml" value="0.225" />
+        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_my_applications.xml" value="0.1" />
+        <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_my_cars.xml" value="0.1" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_news.xml" value="0.3283514492753623" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_replenish_balance.xml" value="0.3451086956521739" />
         <entry key="..\:/Users/Danila/Desktop/AutoserviceST2/app/src/main/res/layout/fragment_slideshow.xml" value="0.3283514492753623" />

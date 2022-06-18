@@ -4,9 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import lombok.Getter;
 import lombok.Setter;
-import ru.cs.vsu.ast2.App;
 import ru.cs.vsu.ast2.api.account.AccountRequests;
 import ru.cs.vsu.ast2.api.account.dto.Account;
+import ru.cs.vsu.ast2.api.application.ApplicationRequest;
+import ru.cs.vsu.ast2.api.application.dto.Application;
 import ru.cs.vsu.ast2.api.car.CarRequest;
 import ru.cs.vsu.ast2.api.car.brand.CarBrandRequest;
 import ru.cs.vsu.ast2.api.car.brand.dto.CarBrand;
@@ -16,11 +17,11 @@ import ru.cs.vsu.ast2.api.car.type.CarTypeRequest;
 import ru.cs.vsu.ast2.api.car.type.dto.CarType;
 import ru.cs.vsu.ast2.api.news.NewsRequests;
 import ru.cs.vsu.ast2.api.news.dto.News;
-import ru.cs.vsu.ast2.ui.logged.LoggedMainActivity;
+import ru.cs.vsu.ast2.api.application.part.PartRequests;
+import ru.cs.vsu.ast2.api.application.part.dto.Part;
+import ru.cs.vsu.ast2.api.application.part.dto.PartCategory;
 
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Getter
 @Setter
@@ -31,17 +32,21 @@ public class AppSession {
     private static final String USER_ID = "UserId";
     private static volatile AppSession appSession;
 
+    private Map<UUID, Application> applicationIdMap;
     private Map<UUID, Car> carIdMap;
     private Map<UUID, News> newsIdMap;
 
     private List<News> news;
+    private List<Application> userApplications;
     private List<Car> userCars;
     private List<CarType> carTypes;
     private List<CarModel> carModels;
     private List<CarBrand> carBrands;
 
+    private List<PartCategory> partCategories;
+    private List<Part> part;
+
     private Account userProfile;
-    private Context context;
 
     public static AppSession getInstance() {
         if (appSession == null)
@@ -94,8 +99,17 @@ public class AppSession {
         CarBrandRequest carModelRequest = new CarBrandRequest();
         carModelRequest.getCarModel(AppSession.getToken(context.getApplicationContext()), () -> null, () -> null);
 
+        PartRequests partRequest = new PartRequests();
+        partRequest.getPart(AppSession.getToken(context.getApplicationContext()), () -> null, () -> null);
+
+        PartRequests partCategoriesRequest = new PartRequests();
+        partCategoriesRequest.getPartCategories(AppSession.getToken(context.getApplicationContext()), () -> null, () -> null);
+
         AccountRequests accountRequests = new AccountRequests();
         accountRequests.getAccountInfo(getToken(context.getApplicationContext()), () -> null, () -> null);
+
+        ApplicationRequest applicationRequest = new ApplicationRequest();
+        applicationRequest.getUserApplications(AppSession.getToken(context.getApplicationContext()), () -> null, () -> null);
     }
 
     public void collectNews() {

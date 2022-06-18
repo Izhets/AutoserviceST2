@@ -16,6 +16,7 @@ import ru.cs.vsu.ast2.R;
 import ru.cs.vsu.ast2.api.AppSession;
 import ru.cs.vsu.ast2.api.account.AccountRequests;
 import ru.cs.vsu.ast2.databinding.FragmentLkBinding;
+import ru.cs.vsu.ast2.ui.application.AddApplicationFragment;
 
 public class LkFragment extends Fragment {
 
@@ -27,6 +28,8 @@ public class LkFragment extends Fragment {
 
     private EditProfileFragment editProfileFragment = new EditProfileFragment();
     private ReplenishBalanceFragment replenishBalanceFragment = new ReplenishBalanceFragment();
+
+    private AddApplicationFragment addApplicationFragment = new AddApplicationFragment();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -66,7 +69,7 @@ public class LkFragment extends Fragment {
         depositButton.setOnClickListener(view -> {
             root.setEnabled(false);
             root.setVisibility(View.INVISIBLE);
-            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment_logged_content_main, replenishBalanceFragment).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment_logged_content_main, addApplicationFragment).commit();
         });
 
         accountLogoutButton.setOnClickListener(view -> {
