@@ -10,6 +10,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import com.google.android.material.textfield.TextInputEditText;
 import ru.cs.vsu.ast2.R;
 import ru.cs.vsu.ast2.api.AppSession;
 import ru.cs.vsu.ast2.api.auth.AuthRequests;
@@ -36,8 +37,8 @@ public class LoginFragment extends Fragment {
 
         final Button loginButton = root.findViewById(R.id.auth_button);
         final Button regButton = root.findViewById(R.id.registrationSaveButton);
-        final EditText loginField = root.findViewById(R.id.loginField);
-        final EditText passwordField = root.findViewById(R.id.passwordField);
+        final TextInputEditText loginField = root.findViewById(R.id.loginTextField);
+        final TextInputEditText passwordField = root.findViewById(R.id.passwordEditField);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

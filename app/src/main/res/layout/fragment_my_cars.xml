@@ -33,7 +33,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="16dp"
-            app:backgroundTint="#5E0000"/>
+            app:backgroundTint="#BD0101"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
